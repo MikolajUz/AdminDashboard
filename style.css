@@ -1,9 +1,72 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+@font-face {
+    font-family: anton-font ;
+    src: url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+
 :root{
     --sidebar-color: rgb(143, 143, 252);
     --header-color: rgb(247, 244, 244);
     --maincontent-color: rgb(226, 216, 216);
-    --maincontent-tile-shadow: box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    --maincontent-tile-shadow:rgb(38, 57, 77) 0px 20px 30px -10px;
+    --avatar: url(../AdminDashboard/icons/avatar.png);
+    --fontfamily: 'Prompt', sans-serif;
 }
+
+
+
+
 
 .container{
     grid-template-columns: 1fr 4fr ;
@@ -17,9 +80,144 @@
     grid-column: 2/3;
     grid-row: 1/2;
     background-color: var(--header-color);
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    font-family: var(--fontfamily);
 }
-            
+
+.headersearch{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headersearch input[type=search] {
+    display: flex;
+    flex: 1;
+    float: left;
+    padding: 6px;
+    border: none;
+    font-size: 14px;
+    border-radius: 15px;
+    background-color: var(--maincontent-color);
+    
+}
+form+.search-button{
+    padding-left: 150px;
+    
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: 0px;
+    display: flex;
+    padding: 20px 20px 30px 0px;
+    align-items: center;
+    
+  }
+  
+  .search-button img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    display: flex;
+    
+  }
+
+.noshrinktext{
+    min-width: 125px;
+    padding-left: 20px ;
+    padding-right: 30px;
+}
+
+.headertext{
+    padding-left: 20px ;
+    
+}
+
+.icon{
+    background: var(--avatar) center center / cover no-repeat;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    
+}
+
+span:hover, .icon:hover, .noshrinktext:hover, img:hover, .icon2:hover,span{
+    cursor:grab;
+}
+
+.material-symbols-outlined:active, .noshrinktext:active{
+    color:red;
+}
+
+
+.icon2{
+    background: var(--avatar) center center / cover no-repeat;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    
+}
+
+.headerbuttons{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+.babycolumn{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+left{
+    display: flex;
+    align-items: center;
+}
+
+right{
+    padding-right: 30px;
+}
+
+.headerbutton{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: var(--header-color);
+  background-color: var(--sidebar-color);
+  border: none;
+  border-radius: 15px;
+  box-shadow: var(--maincontent-tile-shadow);
+}
+
+.headerbutton:hover {background-color: #5a65c4}
+
+.headerbutton:active {
+  background-color: #5a65c4;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}
+
+
+
+
 .sidebar{
     grid-column: 1/2;
     grid-row: 1/3;
@@ -32,4 +230,5 @@
     grid-row: 2/3;
     background-color: var(--maincontent-color);
     display: grid;
+    
 }
