@@ -153,11 +153,11 @@ form+.search-button{
     
 }
 
-span:hover, .icon:hover, .noshrinktext:hover, img:hover, .icon2:hover,span{
+span:hover, .icon:hover, .noshrinktext:hover, img:hover, .icon2:hover,span:hover, .sidebarText:hover{
     cursor:grab;
 }
 
-.material-symbols-outlined:active, .noshrinktext:active{
+.material-symbols-outlined:active, .noshrinktext:active, .material-icons:active, .sidebarText:active{
     color:red;
 }
 
@@ -222,13 +222,40 @@ right{
     grid-column: 1/2;
     grid-row: 1/3;
     background-color: var(--sidebar-color);
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fontfamily);
+    color: var(--header-color);
+    font-weight: bold;
 }
+
+.sidebarTitle{
+    display: flex;
+    padding: 15px 15px 50px 15px;
+    align-items: center;
+}
+
+.sidebarMiddle, .sidebarBottom{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 15px 50px 15px;
+}
+
+sidebarLine{
+    display: flex;
+    align-items: center;
+}
+
 
 .maincontent{
     grid-column: 2/3;
     grid-row: 2/3;
     background-color: var(--maincontent-color);
     display: grid;
+}
+
+.sidebarText{
+    padding-left: 20px ;
     
 }
