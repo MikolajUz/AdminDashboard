@@ -60,7 +60,10 @@ table {
     --header-color: rgb(247, 244, 244);
     --maincontent-color: rgb(226, 216, 216);
     --maincontent-tile-shadow:rgb(38, 57, 77) 0px 20px 30px -10px;
-    --avatar: url(../AdminDashboard/icons/avatar.png);
+    --avatar1: url(../AdminDashboard/icons/avatar.png);
+    --avatar2: url(../AdminDashboard/icons/cartoon_monster.jpg);
+    --avatar3: url(../AdminDashboard/icons/smiley.png);
+    --avatar4: url(../AdminDashboard/icons/kid.png);
     --fontfamily: 'Prompt', sans-serif;
 }
 
@@ -84,6 +87,7 @@ table {
     flex-direction: column;
     padding-left: 30px;
     font-family: var(--fontfamily);
+    
 }
 
 .headersearch{
@@ -142,18 +146,33 @@ form+.search-button{
 
 .headertext{
     padding-left: 20px ;
-    
+    font-weight: bold;
+}
+
+.icon, .icon3, .icon4, .icon5{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px; 
 }
 
 .icon{
-    background: var(--avatar) center center / cover no-repeat;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    
+    background: var(--avatar1) center center / cover no-repeat;
 }
 
-span:hover, .icon:hover, .noshrinktext:hover, img:hover, .icon2:hover,span:hover, .sidebarText:hover{
+.icon3{
+    background: var(--avatar2) center center / cover no-repeat;
+}
+
+.icon4{
+    background: var(--avatar3) center center / cover no-repeat;
+}
+
+.icon5{
+    background: var(--avatar4) center center / cover no-repeat;
+}
+
+
+span:hover, .icon:hover, .noshrinktext:hover, img:hover, .icon2:hover, .icon3:hover,  .icon3:hover, .icon4:hover, span:hover, .sidebarText:hover{
     cursor:grab;
 }
 
@@ -163,7 +182,7 @@ span:hover, .icon:hover, .noshrinktext:hover, img:hover, .icon2:hover,span:hover
 
 
 .icon2{
-    background: var(--avatar) center center / cover no-repeat;
+    background: var(--avatar1) center center / cover no-repeat;
     border-radius: 50%;
     height: 75px;
     width: 75px;
@@ -196,6 +215,7 @@ right{
   display: inline-block;
   padding: 15px 25px;
   font-size: 16px;
+  width: 8rem;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -203,7 +223,7 @@ right{
   color: var(--header-color);
   background-color: var(--sidebar-color);
   border: none;
-  border-radius: 15px;
+  border-radius: 25px;
   box-shadow: var(--maincontent-tile-shadow);
 }
 
@@ -245,7 +265,15 @@ right{
 sidebarLine{
     display: flex;
     align-items: center;
+    
 }
+
+.sidebarText{
+    padding-left: 20px ;
+    
+}
+
+
 
 
 .maincontent{
@@ -253,9 +281,105 @@ sidebarLine{
     grid-row: 2/3;
     background-color: var(--maincontent-color);
     display: grid;
+    grid-template-columns: 8fr 2fr;
+    font-family: var(--fontfamily);
+    padding: 20px;;
 }
 
-.sidebarText{
-    padding-left: 20px ;
-    
+.maincontentColumnFirst{
+    display: flex;
+    flex-direction: column;
+
 }
+
+.maincontentText{
+    color: grey;
+    font-size: 0.8rem
+}
+
+.maincontentTextTitle{
+    font-weight: bold;
+    padding: 20px 0px 10px 0px;
+    font-size: 0.8rem;
+}
+
+maincontentFirstColumn{
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+}
+
+.maincontentTextTitle+div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+
+tile{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 13rem;
+    background-color: var(--header-color);
+    border-radius: 10px;
+    border-left: 6px solid rgb(243, 117, 117);
+    padding: 10px;
+    justify-content: space-between;
+    box-shadow: var(--maincontent-tile-shadow);
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+}
+
+tile::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+tileIcons{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    gap: 15px;
+}
+
+
+
+
+maincontentSecondColumn{
+    display: flex;
+    flex-direction: column;
+    text-overflow: 0;
+}
+
+maincontentSecondColumn>tile{
+    height:14rem;
+    width:16rem;
+    padding: 10px 30px 30px 30px;
+    border-left: none;
+}
+.announcement{
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--maincontent-color);
+}
+maincontentSecondColumn>tile>div:last-child{
+    border-bottom:none;
+}
+
+sidebarLine>.babycolumn{
+  
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 0.8rem;
+}
+tile>sidebarLine{
+    padding-top: 15px;
+}
+
+
+
